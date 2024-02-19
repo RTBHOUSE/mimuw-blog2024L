@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<!-- Post Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.photo %}{{ page.photo }}{% else if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="post-heading">
+					<h1>{{ page.title }}</h1>
+					{% if page.subtitle %}
+					<h2 class="subheading">{{ page.subtitle }}</h2>
+					{% endif %}
+					<span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Content -->
+<article>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<!-- Begin post content -->
+				{{ content }}
+				<!-- End post content -->
+				{% if page.modified %}
+				<p class="text-right update-note"><small class="text-muted">Updated on {{ page.modified | date:"%d/%m/%Y" }}.</small></p>
+				{% endif %}
+				<hr>
+
+				<ul class="pager">
+					{% if page.previous.url %}
+					<li class="previous">
+						<a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+					</li>
+					{% endif %}
+					{% if page.next.url %}
+					<li class="next">
+						<a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+					</li>
+					{% endif %}
+				</ul>
+
+			</div>
+		</div>
+	</div><!-- /.container -->
+
+<!-- 	{% include disqus.html %} -->
+</article>
+
+<hr>
+
+<script src="//creativecdn.com/tags?id=pr_WC3Yr50bXsHUvJdIpgtR_offer_{{ page.id | remove_first: '/' | replace: '/', '-' | uri_escape }}&type=script" data-cookieconsent="marketing" type="text/plain" async></script>
+
+

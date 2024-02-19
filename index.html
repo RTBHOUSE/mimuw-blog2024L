@@ -1,0 +1,75 @@
+---
+layout: page
+heading: "Practical Distributed Systems"
+subtitle: "Lecture resources"
+description: ""
+image: "img/home-bg.jpg"
+---
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+	<a href="{{ post.url | prepend: site.baseurl }}">
+		<h2 class="post-title">
+			{{ post.title }}
+		</h2>
+		{% if post.subtitle %}
+		<h3 class="post-subtitle">
+			{{ post.subtitle }}
+		</h3>
+		{% endif %}
+	</a>
+	<p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+
+<div class="lectures">
+	<h2>
+		Lecture slides
+	</h2>
+	<ol>
+	</ol>
+</div>
+
+<hr>
+
+<div class="lectures">
+	<h2>
+		Laboratory instructions
+	</h2>
+	<ol>
+</div>
+
+<hr>
+
+<hr>
+
+<div>
+	<a href="/OpenVPN.pdf">
+		OpenVPN Connection instructions
+	</a>
+</div>
+
+<div class="lectures">
+        <h2>
+                Assignment
+        </h2>
+        <ul>    
+        </ul>
+</div>
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+	{% if paginator.next_page %}
+	<li class="previous">
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Older Posts</a>
+	</li>
+	{% endif %}
+	{% if paginator.previous_page %}
+	<li class="next">
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer Posts &rarr;</a>
+	</li>
+	{% endif %}
+</ul>
+{% endif %}

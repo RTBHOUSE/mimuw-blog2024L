@@ -1,0 +1,34 @@
+# Site settings
+title: "Practical distributed systems – RTB House MIMUW lecture blog"
+image: img/home-bg.jpg
+logo: img/fav1.png
+email: piotr.jaczewski@rtbhouse.com
+description: "A blog with resources for a lecture *Practical distributed systems* ([USOSweb](https://usosweb.mimuw.edu.pl/kontroler.php?_action=katalog2%2Fprzedmioty%2FpokazPrzedmiot&prz_kod=1000-2M21PRS&lang=en)) conducted at the University of Warsaw, Faculty of Mathematics, Informatics and Mechanics."
+baseurl: ""
+author: "RTB House"
+url: "https://mimuw.rtbhouse.com"
+twitter_username: rtbhouse
+github_username: RTBHOUSE
+facebook_username: RTBHouse
+# gaid: ...
+disqus_site_id: ""
+copyright_name: RTB HOUSE
+
+# Plugins
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+safe: false # safe need to be off for local preview
+lsi: false
+permalink: pretty
+paginate: 10
+exclude: ["sass","node_modules","Gruntfile.js","package.json","README.md","vendor"]
+keep_files: []
